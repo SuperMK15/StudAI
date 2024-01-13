@@ -1,0 +1,191 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    /* font-weight: 400; */
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    /* background-color: #504f4f; */
+    background: linear-gradient(180deg, #3257a5, #39b4a4, #ff8787);
+    /* Adjust the angles and color stops as needed */
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    /* Set text color to be visible against the gradient background */
+
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+    margin: 0;
+    /* padding: 3px; */
+}
+
+.main__logo {
+    margin: 16px;
+    font-size: 50px;
+    text-decoration-line: underline;
+}
+
+.text__stuff {
+    margin: 16px;
+    font-size: 10px;
+}
+
+.banner {
+    background-color: #1d3355;
+}
+
+.banner__content {
+    padding: 16px;
+    max-width: auto;
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 30px;
+}
+
+.banner2 {
+    background-color: #406177;
+    height: 1%;
+    /* Adjust the height as needed */
+    padding: 10px;
+    text-align: center;
+    /* Center the content within the banner */
+}
+
+.banner2 .banner2__content {
+    max-width: auto;
+    /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner2 .banner2__text {
+    font-size: 1.2em;
+    line-height: 1.4;
+    font-family: 'Quicksand', sans-serif;
+    color: #fff;
+    /* Set the text color for the secondary banner */
+}
+
+.button__content {
+    margin: 16px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+    justify-content: center;
+}
+
+.home,
+.pencil,
+.camera {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: #535bf2;
+}
+
+body {
+    margin: 0;
+    /* display: flex; */
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+h1 {
+    font-family: 'Mukta', sans-serif;
+    margin: 0px;
+}
+
+/* h1 */
+.banner__text {
+    font-size: 1.2em;
+    line-height: 0.1;
+    line-height: 1.4;
+    font-family: 'Quicksand', sans-serif;
+}
+
+button1 {
+    border-radius: 16px;
+    border: 1px solid transparent;
+    padding: 10px 150px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #EFEFEF;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+button1:hover {
+    border-color: #646cff;
+}
+
+button1:focus,
+button1:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+button2 {
+    border-radius: 16px;
+    border: 1px solid transparent;
+    padding: 10px 160px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #EFEFEF;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+button2:hover {
+    border-color: #646cff;
+}
+
+button2:focus,
+button2:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
+
+    a:hover {
+        color: #747bff;
+    }
+
+    button1 {
+        background-color: #EFEFEF;
+    }
+
+    button2 {
+        background-color: #EFEFEF;
+    }
+}
