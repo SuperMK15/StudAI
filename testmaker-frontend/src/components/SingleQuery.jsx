@@ -50,7 +50,7 @@ const SingleQuery = ({ queryId, userId, searchQuery }) => {
                         className="w-full text-white bg-gradient-to-b from-yellow-500 via-yellow-300 to-yellow-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        
+                        onClick={() => navigate(`/portal/view-query/${queryId}`)}
                     >
                         View
                     </motion.button>

@@ -25,8 +25,9 @@ const Portal = () => {
 
     if (isSuccess) {
         const { ids } = queries;
+        const reversedIds = [...ids].reverse();
 
-        const tableContent = ids?.map(queryId => <SingleQuery key={queryId} queryId={queryId} userId={id} searchQuery={searchQuery} />);
+        const tableContent = reversedIds?.map(queryId => <SingleQuery key={queryId} queryId={queryId} userId={id} searchQuery={searchQuery} />);
 
         content = (
             <div >

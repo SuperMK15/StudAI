@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import StarBG from './StarBG';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
@@ -8,7 +7,6 @@ import CoHere from './CoHere';
 
 const NewQuery = () => {
   const { id } = useAuth();
-  const navigate = useNavigate();
 
   const [title, setTitle] = useState('');
   const [prompt, setPrompt] = useState('');
@@ -36,7 +34,7 @@ const NewQuery = () => {
       <section className="absolute inset-0 flex items-center justify-center">
         <div className="flex flex-col items-center justify-center px-6 py-8 w-3/4 md:h-screen lg:py-0 relative">
           <Link to="/" className="flex items-center mb-8 text-7xl font-semibold text-gray-900 dark:text-white">
-            <img className="w-16 h-16 mr-2" src="../logo.svg" alt="logo" />
+            <img className="w-16 h-16 mr-2" src="/logo.svg" alt="logo" />
             Stud<span style={{ color: "#FF7D7D" }}>.AI</span>
           </Link>
           <div className="w-full bg-white rounded-3xl shadow dark:border md:p-12 sm:p-10 xl:px-20 xl:py-16 dark:bg-gray-800 dark:border-gray-700">
