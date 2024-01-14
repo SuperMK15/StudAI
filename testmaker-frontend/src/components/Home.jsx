@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div className="relative h-screen">
-      <StarBG />
-
       <div className="absolute inset-0 bg-gradient-to-b from-teal-500 via-teal-400 to-blue-500 h-full"></div>
       <div className="absolute inset-0 bg-black opacity-25"></div>
       <section className="absolute inset-0 flex flex-col items-center justify-center">

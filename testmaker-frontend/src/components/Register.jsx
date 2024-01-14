@@ -87,7 +87,6 @@ const Register = () => {
                     : null}
             </div>
 
-            <StarBG />
             <div className="absolute inset-0 bg-gradient-to-b from-teal-500 via-teal-400 to-blue-500 h-full z-0"></div>
             <div className="absolute inset-0 bg-black opacity-25 z-0"></div>
             <section className="relative z-10">
