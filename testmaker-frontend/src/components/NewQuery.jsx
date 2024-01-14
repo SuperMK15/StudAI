@@ -2,8 +2,11 @@ import { useState } from 'react';
 import StarBG from './StarBG';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 
-const Login = () => {
+const NewQuery = () => {
+  const { id } = useAuth();
+
   const [title, setTitle] = useState('');
   const [prompt, setPrompt] = useState('');
 
@@ -75,4 +78,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default NewQuery;

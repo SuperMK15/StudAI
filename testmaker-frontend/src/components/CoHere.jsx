@@ -1,8 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { CohereClient } from 'cohere-ai';
 
-const CoHere = ({ msg }) => {
+import { useAddNewQueryMutation } from '../features/queries/queriesApiSlice';
+
+const CoHere = ({ user_id, title, prompt, msg }) => {
   const [prediction, setPrediction] = useState(null);
+
+  const [addNewQuery, {
+    isLoading,
+    isSuccess,
+    isError,
+    error
+  }] = useAddNewQueryMutation();
 
   useEffect(() => {
     const fetchPrediction = async () => {
@@ -25,6 +34,21 @@ const CoHere = ({ msg }) => {
 
     fetchPrediction();
   }, []);
+
+  useEffect(() => {
+    if (prediction) {
+      const updateQueries = async () => {
+        await addNewQuery({
+          user_id: user_id,
+          title: title,
+          lecture_note_input: prompt,
+          test_output: prediction.generations[0].text
+        });
+      }
+
+      updateQueries();
+    }
+  }, [prediction]);
 
   return (
     <div>
