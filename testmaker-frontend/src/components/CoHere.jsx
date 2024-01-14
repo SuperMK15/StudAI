@@ -24,7 +24,7 @@ const CoHere = ({ user_id, title, prompt }) => {
       try {
         const result = await cohere.generate({
           prompt: "Make a practice test for the following notes: \n" + prompt + "\n The test should have 10 questions and answers.",
-          maxTokens: 1000,
+          maxTokens: 2000
         });
 
         setPrediction(result);
