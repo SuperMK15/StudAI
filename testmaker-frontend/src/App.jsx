@@ -10,6 +10,7 @@ import Register from "./components/Register";
 import Portal from "./components/Portal";
 import NewQuery from "./components/NewQuery";
 import ViewSingleQuery from './components/ViewSingleQuery';
+import Layout from './components/Layout';
 
 function App() {
     return (
@@ -25,7 +26,7 @@ function App() {
                 <Route element={<PersistLogin />}>
                     <Route element={<RequireAuth />}>
                         <Route element={<Prefetch />}>
-                            <Route path="portal">
+                            <Route path="portal" element={<Layout />}>
                                 <Route index element={<Portal />} />
                                 <Route path="new-query" element={<NewQuery />} />
                                 <Route path="view-query/:id" element={<ViewSingleQuery />} />
