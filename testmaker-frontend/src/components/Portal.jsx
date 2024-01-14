@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 import SingleQuery from './SingleQuery';
 import StarBG from './StarBG';
+import Header from './Header';
 
 const Portal = () => {
     const { id, username } = useAuth();
@@ -29,6 +30,7 @@ const Portal = () => {
 
         content = (
             <div >
+                <Header />
                 <StarBG/>
                 <div className="w-3/4 mx-auto mt-8">
                     <h1 className="text-3xl font-extrabold mb-6 text-center text-white">Welcome, {username}</h1>
