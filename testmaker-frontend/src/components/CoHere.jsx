@@ -83,7 +83,7 @@ const CoHere = ({ user_id, title, prompt }) => {
 
   return (
     <>
-      <Header />
+      <div className="relative z-20"><Header /></div>
       {prediction ? (
         <>
           <div class="m-4 p-4 border rounded-lg bg-gray-100">

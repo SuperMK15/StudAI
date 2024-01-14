@@ -20,7 +20,7 @@ const RegistrationSuccessful = () => {
                 </div>
                 <h1 className="text-green-500 text-2xl font-bold mb-4">Registration Successful!</h1>
                 <p className='text-white font-bold mb-4'>
-                    <Link to="/login">Click here to log in.</Link>
+                    <Link to="/login">Click <span className='text-blue-500'>here</span> to log in.</Link>
                 </p>
 
             </div>

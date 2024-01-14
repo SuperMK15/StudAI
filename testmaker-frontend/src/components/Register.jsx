@@ -75,13 +75,17 @@ const Register = () => {
 
     return (
         <div>
-            {isSuccess ?
-                <RegistrationSuccessful /> : null}
+            <div className="relative z-20">
+                {isSuccess ?
+                    <RegistrationSuccessful /> : null}
+            </div>
 
-            {isError ?
-                (error.status === 409) ?
-                    <RegistrationError messageerror={`Username ${username} is already taken. Choose another.`} /> : <RegistrationError messageerror="Registration Failed. Try Again." />
-                : null}
+            <div className="relative z-20">
+                {isError ?
+                    (error.status === 409) ?
+                        <RegistrationError messageerror={`Username ${username} is already taken. Choose another.`} /> : <RegistrationError messageerror="Registration Failed. Try Again." />
+                    : null}
+            </div>
 
             <StarBG />
             <div className="absolute inset-0 bg-gradient-to-b from-teal-500 via-teal-400 to-blue-500 h-full z-0"></div>

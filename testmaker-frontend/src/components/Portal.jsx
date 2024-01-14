@@ -31,7 +31,7 @@ const Portal = () => {
         content = (
             <div >
                 <StarBG />
-                <Header />
+                <div className="relative z-20"><Header /></div>
                 <div className="w-3/4 mx-auto mt-8">
                     <h1 className="text-3xl font-extrabold mb-6 text-center text-white">Welcome, {username}</h1>
                     <div className="bg-gray-800 p-6 rounded-lg mb-8">

@@ -25,7 +25,7 @@ const NewQuery = () => {
   if (display) {
     return (
       <>
-        <Header />
+        <div className="relative z-20"><Header /></div>
         <CoHere user_id={id} title={title} prompt={prompt} />
       </>
     )
@@ -33,10 +33,8 @@ const NewQuery = () => {
 
   return (
     <>
-      <Header />
       <div className="relative h-screen">
-        <StarBG />
-        <div className="absolute inset-0 bg-gradient-to-b from-teal-500 via-teal-400 to-blue-500 h-full"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-teal-500 via-teal-400 to-blue-500 h-full"><div className="relative z-20 mt-5"><Header /></div></div>
         <div className="absolute inset-0 bg-black opacity-25"></div>
         <section className="absolute inset-0 flex items-center justify-center">
           <div className="flex flex-col items-center justify-center px-6 py-8 w-3/4 md:h-screen lg:py-0 relative">
