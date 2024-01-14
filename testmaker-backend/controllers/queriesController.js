@@ -52,6 +52,10 @@ const createQuery = asyncHandler(async (req, res) => {
     // validate user_id
     if (!isValidObjectId(user_id)) return res.status(400).json({ message: 'Invalid user id' });
 
+    // ensure title is unique
+    const duplicate = await Query.findOne({ title }).lean().exec();
+    if (duplicate) return res.status(400).json({ message: 'Query with that title already exists' });
+
     // create a new query
     const queryObject = new Query({
         user_id,
