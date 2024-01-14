@@ -27,14 +27,11 @@ const Portal = () => {
         const { ids } = queries;
         const reversedIds = [...ids].reverse();
 
-        reversedIds?.filter(queryId => queries.entities[queryId].user_id === id);
-
-        const tableContent = reversedIds?.map(queryId => <SingleQuery key={queryId} queryId={queryId} userId={id} searchQuery={searchQuery} />);
-
+        const tableContent = reversedIds?.map(queryId => <SingleQuery key={queryId} queryId={queryId} userId={id} searchQuery={searchQuery}/>);
         content = (
             <div >
-                <StarBG/>
-                <Header/>
+                <StarBG />
+                <Header />
                 <div className="w-3/4 mx-auto mt-8">
                     <h1 className="text-3xl font-extrabold mb-6 text-center text-white">Welcome, {username}</h1>
                     <div className="bg-gray-800 p-6 rounded-lg mb-8">
@@ -48,19 +45,20 @@ const Portal = () => {
                         />
                         <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mt-4"><Link to="/portal/new-query"> New Query </Link></button>
                     </div>
-                    <div className="overflow-y-scroll h-96">
-                        <table className="min-w-full table-auto border w-full border-gray-700">
-                            <thead className='bg-gray-800'>
-                                <tr>
-                                    <th className="border p-4 text-white text-xl">Title</th>
-                                    <th className="border p-4 text-white text-xl">Notes Input</th>
-                                    <th className="border p-4 text-white text-xl">Stud.AI Ouput</th>
-                                    <th className="border p-4 text-white text-xl">View</th>
-                                    <th className="border p-4 text-white text-xl">Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody className='text-white bg-gray-700'>{tableContent}</tbody>
-                        </table>
+                    <div className="overflow-y-scroll max-h-96">
+                        {true ?
+                            (<table className="min-w-full table-auto border w-full border-gray-700">
+                                <thead className='bg-gray-800'>
+                                    <tr>
+                                        <th className="border p-4 text-white text-xl">Title</th>
+                                        <th className="border p-4 text-white text-xl">Notes Input</th>
+                                        <th className="border p-4 text-white text-xl">Stud.AI Ouput</th>
+                                        <th className="border p-4 text-white text-xl">View</th>
+                                        <th className="border p-4 text-white text-xl">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody className='text-white bg-gray-700'>{tableContent}</tbody>
+                            </table>) : <div className="bg-gray-800 p-4 rounded-lg"><p className="text-center text-white text-xl">No Queries Found. Please Get Started by Clicking "New Query!"</p></div>}
                     </div>
                 </div>
             </div>

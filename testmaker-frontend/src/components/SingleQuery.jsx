@@ -13,7 +13,7 @@ const truncateText = (text, limit) => {
     return text;
 };
 
-const SingleQuery = ({ queryId, userId, searchQuery }) => {
+const SingleQuery = ({ queryId, userId, searchQuery, foundNumber, setFoundNumber }) => {
     const query = useSelector((state) => selectQueryById(state, queryId));
     const navigate = useNavigate();
 
@@ -39,7 +39,8 @@ const SingleQuery = ({ queryId, userId, searchQuery }) => {
             }
         }
 
-        if (toString(userId) !== toString(query.user_id)) return null;
+        console.log(userId, query.user_id);
+        if (userId !== query.user_id) return null;
 
         return (
             <tr>
