@@ -1,13 +1,31 @@
-import React, { useState } from 'react';
-import { RiHome2Line } from 'react-icons/ri';
-import { RiPencilLine } from 'react-icons/ri';
-import { RiCamera3Line } from 'react-icons/ri';
+import StarBG from './StarBG';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-function Home() {
-
+const Home = () => {
   return (
-    <div className='text-red-500'>Hello World</div>
+    <div className="relative h-screen">
+      <StarBG />
+
+      <div className="absolute inset-0 bg-gradient-to-b from-teal-500 via-teal-400 to-blue-500 h-full"></div>
+      <div className="absolute inset-0 bg-black opacity-25"></div>
+      <section className="absolute inset-0 flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center mt-4">
+          <a href="#" className="flex items-center text-9xl font-semibold text-gray-900 dark:text-white">
+            <img className="w-32 h-32 mr-2" alt="logo" />
+            Stud.AI
+          </a>
+          <p className="text-4xl font-semibold text-gray-900 dark:text-white mt-2">
+            The best way to study, using AI.
+          </p>
+        </div>
+
+        <Link to="/login" className="text-3xl font-semibold text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 py-4 px-8 rounded-full focus:ring-4 focus:outline-none focus:ring-purple-300 mt-5">
+          Begin
+        </Link>
+      </section>
+    </div>
   );
-}
+};
 
 export default Home;
