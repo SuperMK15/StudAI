@@ -36,19 +36,19 @@ const CoHere = ({ user_id, title, prompt }) => {
   }, []);
 
   useEffect(() => {
-    if (prediction) {
-      const updateQueries = async () => {
-        await addNewQuery({
-          user_id: user_id,
-          title: title,
-          lecture_note_input: prompt,
-          test_output: prediction.generations[0].text
-        });
-      }
+    const updateQueries = async () => {
+      await addNewQuery({
+        user_id: user_id,
+        title: title,
+        lecture_note_input: prompt,
+        test_output: prediction.generations[0].text
+      });
+    }
 
+    if (prediction && !isLoading && !isSuccess) {
       updateQueries();
     }
-  }, [prediction]);
+  }, [prediction, isLoading, isSuccess]);
 
   return (
     <div>
