@@ -34,7 +34,7 @@ const getQueriesByUserId = asyncHandler(async (req, res) => {
     const queries = await Query.find({ user_id }).lean();
 
     // handle the case where no queries are found
-    // if (!queries?.length) return res.status(404).json({ message: 'No queries found in DB' });
+    if (!queries?.length) return res.status(400).json({ message: 'No queries found in DB' });
 
     res.json(queries); // send the queries back to the client
 });
