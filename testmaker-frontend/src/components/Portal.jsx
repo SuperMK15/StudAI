@@ -31,7 +31,6 @@ const Portal = () => {
 
         content = (
             <div >
-                <Header />
                 <StarBG/>
                 <div className="w-3/4 mx-auto mt-8">
                     <h1 className="text-3xl font-extrabold mb-6 text-center text-white">Welcome, {username}</h1>
@@ -46,7 +45,7 @@ const Portal = () => {
                         />
                         <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mt-4"><Link to="/portal/new-query"> New Query </Link></button>
                     </div>
-                    <div className="overflow-x-auto">
+                    <div className="overflow-y-scroll h-96">
                         <table className="min-w-full table-auto border w-full border-gray-700">
                             <thead className='bg-gray-800'>
                                 <tr>
