@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CohereClient } from 'cohere-ai';
-
+import Header from './Header';
 import { useAddNewQueryMutation } from '../features/queries/queriesApiSlice';
 
 const CoHere = ({ user_id, title, prompt }) => {
@@ -51,16 +51,19 @@ const CoHere = ({ user_id, title, prompt }) => {
   }, [prediction, isLoading, isSuccess]);
 
   return (
-    <div class="m-4 p-4 border rounded-lg bg-gray-100">
-      <h1 class="text-lg font-semibold mb-4">Generated Prediction:</h1>
-      {prediction ? (
-        <pre class="whitespace-pre-wrap font-mono text-sm text-gray-700">
-          {prediction.generations[0].text}
-        </pre>
-      ) : (
-        <p class="text-gray-500">Loading...</p>
-      )}
-    </div>
+    <>
+      <Header />
+      <div class="m-4 p-4 border rounded-lg bg-gray-100">
+        <h1 class="text-lg font-semibold mb-4">Generated Prediction:</h1>
+        {prediction ? (
+          <pre class="whitespace-pre-wrap font-mono text-sm text-gray-700">
+            {prediction.generations[0].text}
+          </pre>
+        ) : (
+          <p class="text-gray-500">Loading...</p>
+        )}
+      </div>
+    </>
   );
 };
 
