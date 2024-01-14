@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux'
 import { selectQueryById } from '../features/queries/queriesApiSlice'
 import { motion } from 'framer-motion'
 
+import { useDeleteQueryMutation } from '../features/queries/queriesApiSlice'
+
 const truncateText = (text, limit) => {
     if (text.length > limit) {
         return text.substring(0, limit) + "..."; // Truncate text and add ellipsis
@@ -13,6 +15,19 @@ const truncateText = (text, limit) => {
 const SingleQuery = ({ queryId, userId, searchQuery }) => {
     const query = useSelector((state) => selectQueryById(state, queryId));
     const navigate = useNavigate();
+
+    const [deleteQuery, { isLoading, isSuccess, isError, error }] = useDeleteQueryMutation();
+
+    const handleDelete = async (e) => {
+        e.preventDefault();
+
+        const confirmDelete = window.confirm("Are you sure you want to delete this query? Action cannot be undone.");
+
+        if (confirmDelete) {
+            await deleteQuery({id: queryId});
+            navigate("/portal");
+        }
+    }
 
     if (query) {
         if (searchQuery !== "") {
@@ -38,6 +53,16 @@ const SingleQuery = ({ queryId, userId, searchQuery }) => {
                         
                     >
                         View
+                    </motion.button>
+                </td>
+                <td className="border p-4">
+                    <motion.button
+                        className="w-full text-white bg-gradient-to-b from-red-500 via-red-300 to-red-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        onClick={handleDelete}
+                    >
+                        Delete
                     </motion.button>
                 </td>
             </tr>

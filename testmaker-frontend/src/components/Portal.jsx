@@ -53,6 +53,7 @@ const Portal = () => {
                                     <th className="border p-4 text-white text-xl">Notes Input</th>
                                     <th className="border p-4 text-white text-xl">Stud.AI Ouput</th>
                                     <th className="border p-4 text-white text-xl">View</th>
+                                    <th className="border p-4 text-white text-xl">Delete</th>
                                 </tr>
                             </thead>
                             <tbody className='text-white bg-gray-700'>{tableContent}</tbody>
