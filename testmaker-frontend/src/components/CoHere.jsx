@@ -51,12 +51,14 @@ const CoHere = ({ user_id, title, prompt }) => {
   }, [prediction, isLoading, isSuccess]);
 
   return (
-    <div>
-      <h1>Generated Prediction:</h1>
+    <div class="m-4 p-4 border rounded-lg bg-gray-100">
+      <h1 class="text-lg font-semibold mb-4">Generated Prediction:</h1>
       {prediction ? (
-        <pre>{prediction.generations[0].text}</pre>
+        <pre class="whitespace-pre-wrap font-mono text-sm text-gray-700">
+          {prediction.generations[0].text}
+        </pre>
       ) : (
-        <p>Loading...</p>
+        <p class="text-gray-500">Loading...</p>
       )}
     </div>
   );
