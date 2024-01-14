@@ -3,7 +3,7 @@ import { CohereClient } from 'cohere-ai';
 
 import { useAddNewQueryMutation } from '../features/queries/queriesApiSlice';
 
-const CoHere = ({ user_id, title, prompt, msg }) => {
+const CoHere = ({ user_id, title, prompt }) => {
   const [prediction, setPrediction] = useState(null);
 
   const [addNewQuery, {
@@ -21,8 +21,8 @@ const CoHere = ({ user_id, title, prompt, msg }) => {
 
       try {
         const result = await cohere.generate({
-          prompt: msg,
-          maxTokens: 500,
+          prompt: "Make a practice test for the following notes: \n" + prompt + "\n The test should have 10 questions and answers.",
+          maxTokens: 1000,
         });
 
         console.log('Prediction:', result);

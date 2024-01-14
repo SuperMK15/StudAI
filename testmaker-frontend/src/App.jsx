@@ -9,6 +9,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Portal from "./components/Portal";
 import NewQuery from "./components/NewQuery";
+import CoHere from "./components/CoHere";
 
 function App() {
     return (

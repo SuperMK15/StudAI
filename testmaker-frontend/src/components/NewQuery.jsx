@@ -1,18 +1,31 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import StarBG from './StarBG';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
+import CoHere from './CoHere';
 
 const NewQuery = () => {
   const { id } = useAuth();
+  const navigate = useNavigate();
 
   const [title, setTitle] = useState('');
   const [prompt, setPrompt] = useState('');
+  const [display, setDisplay] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(title, prompt);
+    setDisplay(true);
+  }
+
+  useEffect(() => {
+    
+  }, [display]);
+
+  if (display) {
+    console.log("displaying");
+    return <CoHere user_id={id} title={title} prompt={prompt} />
   }
 
   return (
