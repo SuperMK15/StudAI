@@ -38,16 +38,17 @@ const Portal = () => {
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                             placeholder="Search Queries..."
-                            className="w-full border rounded-md p-3 focus:outline-none"
+                            className="w-5/6 mr-10 5px border rounded-md p-3 focus:outline-none"
                         />
+                        <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mt-4"> New Query </button>
                     </div>
                     <div className="overflow-x-auto">
                         <table className="min-w-full table-auto border w-full border-gray-700">
                             <thead className='bg-gray-800'>
                                 <tr>
                                     <th className="border p-4 text-white text-xl">Title</th>
-                                    <th className="border p-4 text-white text-xl">Lecture Note Input</th>
-                                    <th className="border p-4 text-white text-xl">Test Output</th>
+                                    <th className="border p-4 text-white text-xl">Notes Input</th>
+                                    <th className="border p-4 text-white text-xl">Stud.AI Ouput</th>
                                     <th className="border p-4 text-white text-xl">View</th>
                                 </tr>
                             </thead>
