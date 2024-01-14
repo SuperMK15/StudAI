@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import jwtDecode from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 import { selectCurrentToken } from '../features/auth/authSlice';
 
 const useAuth = () => {
@@ -9,10 +9,10 @@ const useAuth = () => {
         const decoded = jwtDecode(token);
         const { id, username } = decoded.UserInfo;
 
-        return { id, username};
+        return { id, username, role: 'verified'};
     }
 
-    return { id: '', username: ''};
+    return { id: '', username: '', role: 'X'};
 };
 
 export default useAuth
