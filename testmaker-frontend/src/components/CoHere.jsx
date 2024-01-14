@@ -27,7 +27,6 @@ const CoHere = ({ user_id, title, prompt }) => {
           maxTokens: 1000,
         });
 
-        console.log('Prediction:', result);
         setPrediction(result);
       } catch (error) {
         console.error('Error fetching prediction:', error);

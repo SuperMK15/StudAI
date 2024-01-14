@@ -40,7 +40,6 @@ const SingleQuery = ({ queryId, userId, searchQuery, foundNumber, setFoundNumber
             }
         }
 
-        console.log(userId, query.user_id);
         if (userId !== query.user_id) return null;
 
         return (
