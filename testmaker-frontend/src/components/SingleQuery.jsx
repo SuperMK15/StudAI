@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { useDeleteQueryMutation } from '../features/queries/queriesApiSlice'
 
 import { RiDeleteBinLine } from 'react-icons/ri'
+import { RiInformationLine } from 'react-icons/ri'
 
 const truncateText = (text, limit) => {
     if (text.length > limit) {
@@ -49,23 +50,29 @@ const SingleQuery = ({ queryId, userId, searchQuery, foundNumber, setFoundNumber
                 <td className="border p-4 font-roboto">{truncateText(query.test_output, 100)}</td>
                 <td className="border p-4">
                     <motion.button
-                        className="w-full text-white bg-gradient-to-b from-yellow-500 via-yellow-300 to-yellow-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        className="w-full text-white bg-gradient-to-b from-yellow-500 to-yellow-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         onClick={() => navigate(`/portal/view-query/${queryId}`)}
                     >
-                        View
+                        <div>
+                            <motion.div whileHover={{ scale: 2 }} whileTap={{ scale: 2 }}>
+                                <RiInformationLine />
+                            </motion.div>
+                        </div>
                     </motion.button>
                 </td>
                 <td className="border p-4">
                     <motion.button
-                        className="w-full flex items-center justify-center text-white bg-gradient-to-b from-red-500 via-red-300 to-red-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        className="w-full flex items-center justify-center text-white bg-red-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         onClick={handleDelete}
                     >
                         <div>
-                            <RiDeleteBinLine />
+                            <motion.div whileHover={{ scale: 2 }} whileTap={{ scale: 2 }}>
+                                <RiDeleteBinLine />
+                            </motion.div>
                         </div>
                     </motion.button>
                 </td>

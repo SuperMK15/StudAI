@@ -84,7 +84,9 @@ const Register = () => {
                 : null}
 
             <StarBG />
-            <section className="">
+            <div className="absolute inset-0 bg-gradient-to-b from-teal-500 via-teal-400 to-blue-500 h-full z-0"></div>
+            <div className="absolute inset-0 bg-black opacity-25 z-0"></div>
+            <section className="relative z-10">
                 <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                     <Link to="/" className="flex items-center mb-6 text-5xl font-semibold text-gray-900 dark:text-white">
                         <img className="w-8 h-8 mr-2" src="./logo.svg" alt="logo" />
@@ -171,7 +173,7 @@ const Register = () => {
                                 {!validMatchPassword ? <p className="text-red-600" >Passwords Do Not Match</p> : null}
 
                                 <motion.button
-                                    className="w-full text-white bg-red-500 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                                    className="w-full text-white bg-gradient-to-r from-pink-500 to-teal-500 hover:to-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.9 }}
                                 >
