@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
-import CoHere from './CoHere';
 import Header from './Header';
 import { useSelector } from 'react-redux';
 import { useGetQueriesQuery } from '../features/queries/queriesApiSlice';
 import { selectQueryById } from '../features/queries/queriesApiSlice';
+import jsPDF from 'jspdf';
 
 const ViewSingleQuery = () => {
     const { data: queries, isLoading, isSuccess, isError, error } = useGetQueriesQuery(undefined, {
@@ -26,6 +26,36 @@ const ViewSingleQuery = () => {
 
     const { id } = useParams();
     const query = useSelector((state) => selectQueryById(state, id));
+
+    const handleDownloadPDF = (e) => {
+        e.preventDefault();
+        if (query.test_output) {
+            const pdf = new jsPDF({
+                orientation: 'portrait',
+                unit: 'mm',
+                format: 'a4'
+            });
+
+            const text = query.test_output;
+            const textLines = pdf.splitTextToSize(text, pdf.internal.pageSize.width - 20);
+
+            let cursorY = 10;
+            let currentPage = 1;
+
+            textLines.forEach((line, index) => {
+                if (cursorY > pdf.internal.pageSize.height - 20) {
+                    pdf.addPage();
+                    cursorY = 10;
+                    currentPage++;
+                }
+
+                pdf.text(line, 10, cursorY);
+                cursorY += 10;
+            });
+
+            pdf.save(query.title + `_test.pdf`);
+        }
+    };
 
     if (isLoading) return <p>Loading...</p>;
 
@@ -74,6 +104,12 @@ const ViewSingleQuery = () => {
                                         value={query.test_output}
                                     ></textarea>
                                 </div>
+
+                                <motion.button
+                                    className="mb-6 mr-20 text-white bg-gradient-to-b from-blue-700 to-blue-300 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                                    onClick={(e) => handleDownloadPDF(e)}>
+                                    Download as PDF
+                                </motion.button>
                             </div>
                         </div>
                     </div>

@@ -74,13 +74,12 @@ const CoHere = ({ user_id, title, prompt }) => {
         }
 
         pdf.text(line, 10, cursorY);
-        cursorY += 10; // Adjust this value to control line spacing
+        cursorY += 10;
       });
 
       pdf.save(title + `_test.pdf`);
     }
   };
-
 
   return (
     <>
