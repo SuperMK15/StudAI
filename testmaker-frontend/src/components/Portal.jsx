@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useGetQueriesQuery } from '../features/queries/queriesApiSlice';
 import useAuth from '../hooks/useAuth';
 import SingleQuery from './SingleQuery';
+import StarBG from './StarBG';
 
 const Portal = () => {
     const { id, username } = useAuth();
@@ -26,28 +27,35 @@ const Portal = () => {
         const tableContent = ids?.map(queryId => <SingleQuery key={queryId} queryId={queryId} userId={id} searchQuery={searchQuery} />);
 
         content = (
-            <>
-                <h1>Welcome, {username}</h1>
-                <br />
-                <h2>Queries List</h2> <br />
-                <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={e => setSearchQuery(e.target.value)}
-                    placeholder="Search Queries..."
-                />
-                <br /><br />
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Lecture Note Input</th>
-                            <th>Test Output</th>
-                        </tr>
-                    </thead>
-                    <tbody>{tableContent}</tbody>
-                </table>
-            </>
+            <div >
+                <StarBG/>
+                <div className="w-3/4 mx-auto mt-8">
+                    <h1 className="text-3xl font-extrabold mb-6 text-center text-white">Welcome, {username}</h1>
+                    <div className="bg-gray-800 p-6 rounded-lg mb-8">
+                        <h2 className="text-2xl font-bold mb-4 text-white">Queries List</h2>
+                        <input
+                            type="text"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            placeholder="Search Queries..."
+                            className="w-full border rounded-md p-3 focus:outline-none"
+                        />
+                    </div>
+                    <div className="overflow-x-auto">
+                        <table className="min-w-full table-auto border w-full border-gray-700">
+                            <thead className='bg-gray-800'>
+                                <tr>
+                                    <th className="border p-4 text-white text-xl">Title</th>
+                                    <th className="border p-4 text-white text-xl">Lecture Note Input</th>
+                                    <th className="border p-4 text-white text-xl">Test Output</th>
+                                    <th className="border p-4 text-white text-xl">View</th>
+                                </tr>
+                            </thead>
+                            <tbody className='text-white bg-gray-700'>{tableContent}</tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         );
     }
 
