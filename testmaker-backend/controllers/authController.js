@@ -65,7 +65,7 @@ const register = asyncHandler(async (req, res) => {
 
     // check if username is already taken and if so, return an error
     const duplicate = await User.findOne({ username }).lean().exec();
-    if (duplicate) return res.status(400).json({ message: `Error: Username ${username} is already taken` });
+    if (duplicate) return res.status(409).json({ message: `Error: Username ${username} is already taken` });
 
     // hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
