@@ -86,13 +86,13 @@ const Register = () => {
             <StarBG />
             <section className="">
                 <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-                    <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-                        <img className="w-8 h-8 mr-2" alt="logo" />
-                        Stud.AI
-                    </a>
+                    <Link to="/" className="flex items-center mb-6 text-5xl font-semibold text-gray-900 dark:text-white">
+                        <img className="w-8 h-8 mr-2" src="./logo.svg" alt="logo" />
+                        Stud<span style={{ color: "#FF7D7D" }}>.AI</span>
+                    </Link>
                     <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-                        <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-                            <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                        <div className="p-6 space-y-4 md:space-y-2 sm:p-4">
+                            <h1 className="text-center font-bold leading-tight tracking-tight text-gray-900 md:text-xl dark:text-white">
                                 Sign Up for Stud.AI
                             </h1>
                             <form className="space-y-4 md:space-y-6" onSubmit={onSaveUserClicked}>
@@ -178,6 +178,10 @@ const Register = () => {
                                     Register
                                 </motion.button>
                             </form>
+
+                            <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                                Already have an account? <Link to="/login" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Log in!</Link>
+                            </p>
                         </div>
                     </div>
                 </div>
