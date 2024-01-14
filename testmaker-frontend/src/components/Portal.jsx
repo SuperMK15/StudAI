@@ -27,6 +27,8 @@ const Portal = () => {
         const { ids } = queries;
         const reversedIds = [...ids].reverse();
 
+        reversedIds?.filter(queryId => queries.entities[queryId].user_id === id);
+
         const tableContent = reversedIds?.map(queryId => <SingleQuery key={queryId} queryId={queryId} userId={id} searchQuery={searchQuery} />);
 
         content = (
