@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { setCredentials } from '../../features/auth/authSlice';
 
-const apiBaseUrl = (process.env.NODE_ENV === 'production' ? 'N/A' : 'http://localhost:3500/');
+const apiBaseUrl = (process.env.NODE_ENV === 'production' ? 'https://studai-backend.onrender.com' : 'http://localhost:3500/');
 
 const baseQuery = fetchBaseQuery({
     baseUrl: apiBaseUrl,
