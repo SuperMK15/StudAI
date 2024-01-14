@@ -18,13 +18,13 @@ const CoHere = ({ user_id, title, prompt }) => {
   useEffect(() => {
     const fetchPrediction = async () => {
       const cohere = new CohereClient({
-        token: import.meta.env.VITE_COHERE_API_KEY,
+        token: import.meta.env.VITE_COHERE_API_KEY_PROD,
       });
 
       try {
         const result = await cohere.generate({
           prompt: "Make a practice test for the following notes: \n" + prompt + "\n The test should have 10 questions and answers.",
-          maxTokens: 2000
+          maxTokens: 1000
         });
 
         setPrediction(result);
