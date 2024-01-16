@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useGetQueriesQuery } from '../features/queries/queriesApiSlice';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import useAuth from '../hooks/useAuth';
 import SingleQuery from './SingleQuery';
 import StarBG from './StarBG';
@@ -55,7 +56,10 @@ const Portal = () => {
                             placeholder="Search Queries..."
                             className="w-5/6 mr-10 5px border rounded-md p-3 focus:outline-none"
                         />
-                        <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mt-4"><Link to="/portal/new-query"> New Query </Link></button>
+                        <motion.button whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }} className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mt-4">
+                            <Link to="/portal/new-query"> New Query </Link>
+                        </motion.button>
                     </div>
                     <div className="overflow-y-scroll max-h-96">
                         {true ?

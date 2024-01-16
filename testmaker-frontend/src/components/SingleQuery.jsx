@@ -55,7 +55,7 @@ const SingleQuery = ({ queryId, userId, searchQuery, foundNumber, setFoundNumber
                         onClick={() => navigate(`/portal/view-query/${queryId}`)}
                     >
                         <div>
-                            <motion.div whileHover={{ scale: 2 }} whileTap={{ scale: 2 }}>
+                            <motion.div whileHover={{ scale: 1.5 }} whileTap={{ scale: 1.5 }}>
                                 <RiInformationLine />
                             </motion.div>
                         </div>
@@ -69,7 +69,7 @@ const SingleQuery = ({ queryId, userId, searchQuery, foundNumber, setFoundNumber
                         onClick={handleDelete}
                     >
                         <div>
-                            <motion.div whileHover={{ scale: 2 }} whileTap={{ scale: 2 }}>
+                            <motion.div whileHover={{ scale: 1.5 }} whileTap={{ scale: 1.5 }}>
                                 <RiDeleteBinLine />
                             </motion.div>
                         </div>
