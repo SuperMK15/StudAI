@@ -79,7 +79,7 @@ const Register = () => {
     }
 
     return (
-        <div className="flex overflow-hidden p-5 h-full w-full bg-gradient-to-b from-teal-500 via-teal-400 to-blue-500 items-center justify-center">
+        <div className="flex overflow-hidden p-5 pb-20 h-full w-full bg-gradient-to-b from-teal-500 via-teal-400 to-blue-500 items-center justify-center">
             <div className="absolute flex h-full items-center justify-center z-20">
                 {isSuccess ?
                     <RegistrationSuccessful /> : null}
@@ -92,7 +92,7 @@ const Register = () => {
                     : null}
             </div>
 
-            <div className="flex flex-col items-center justify-center gap-2 w-[500px]">
+            <div className="flex flex-col items-center justify-center gap-2 w-[500px] overflow-hidden">
                 <Link to="/" className="flex items-center text-5xl font-semibold text-gray-900 dark:text-white">
                     <img className="w-8 h-8 mr-2" src="./logo.svg" alt="logo" />
                     Stud<span style={{ color: "#FF7D7D" }}>.AI</span>
@@ -102,7 +102,7 @@ const Register = () => {
                         <h1 className="text-center font-bold leading-tight tracking-tight text-gray-900 md:text-xl dark:text-white">
                             Sign Up for Stud.AI
                         </h1>
-                        <form className="space-y-4 md:space-y-6" onSubmit={onSaveUserClicked}>
+                        <form className="space-y-4" onSubmit={onSaveUserClicked}>
                             <div>
                                 <label htmlFor="firstName" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                     First Name
@@ -183,16 +183,19 @@ const Register = () => {
                                 </div> :
                                 <motion.button
                                     className="w-full text-white bg-gradient-to-r from-pink-500 to-teal-500 hover:to-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                                    whileHover={{ scale: 1.1 }}
-                                    whileTap={{ scale: 0.9 }}
+                                    whileHover={{ scale: 1.03 }}
+                                    whileTap={{ scale: 0.98 }}
                                 >
                                     Register
                                 </motion.button>}
 
                         </form>
 
-                        <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+                        <p className="text-sm font-light text-gray-400">
                             Already have an account? <Link to="/login" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Log in!</Link>
+                        </p>
+                        <p className="text-sm font-light text-gray-400">
+                                Note that it make take a while for the backend to load on initial query.
                         </p>
                     </div>
                 </div>
